@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.slider.bar > span.left-handle, .slider .bar > span.right-handle{
+    background:#007bff !important;
+    border: 7px solid #007bff !important;
+}
+.slider .bar > span.left-handle, .slider .bar > span.right-handle{
+    background:#007bff !important;
+    border: 7px solid #007bff !important;
+}
+.slider .bar > span.left-handle .handle-tooltip, .slider .bar > span.right-handle .handle-tooltip{
+    border: 1px solid #007bff  !important;
+    background: #d2e3eb  !important;
+    color: #007bff  !important;
+ 
+}
+.slider .bar div.filler > span{
+    background:#007bff !important;
+}

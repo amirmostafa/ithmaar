@@ -1,0 +1,26 @@
+<p><a class="primary">Sorting</a> Displaying {{max}} hotel of {{data.length}} nights 20 night</p>
+<div class="card w-100">
+    <div class="my-3 d-flex justify-content-between px-5">
+        <button type="button" class="btn btn-primary" (click)="changeOrder('price', true)">High Price</button>
+        <button type="button" class="btn btn-primary" (click)="changeOrder('price', false)">Low Price</button>
+        <button type="button" class="btn btn-primary" (click)="changeOrder('name', false)">A-Z Hotel</button>
+        <button type="button" class="btn btn-primary" (click)="changeOrder('name', true)">Z-A Hotel</button>
+    </div>
+</div>
+
+<div *ngFor="let hotelDetails of data | filterPrice:that.priceRange | filter:'city':that['citiesFilter'] | filter:'name':that['hotelsFilter'] | orderBy: order.by: order.dir | slice: min:max ">
+
+    <div class="card w-100 mb-4">
+        <div class="card-header">
+            {{hotelDetails.name}}
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">City: {{hotelDetails.city}}</li>
+            <li class="list-group-item">Price {{hotelDetails.price}}</li>
+        </ul>
+    </div>
+</div>
+
+<div class="align-self-center text-center">
+    <button type="button" class="btn btn-primary my-4" (click)="showMore()" [hidden]="data.length <= max">Load More</button>
+</div>
